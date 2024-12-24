@@ -1,0 +1,224 @@
+body {
+    font-family: "Courier New", monospace; /* Fuente de terminal */
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background-color: #000; /* Fondo negro */
+    color: #39FF14;         /* Verde neón */
+}
+
+header {
+    font-family: "Courier New", monospace; /* Fuente de terminal */
+    background-color: #000000;
+    color: #83F52C;
+    padding: 20px;
+}
+
+h1 {
+    font-family: "Courier New", monospace; /* Fuente de terminal */
+    font-size: 4rem;
+    margin: 0;
+    color: #83F52C;
+}
+
+section {
+    margin: 20px 0;
+}
+
+/* Estilo básico de la galería */
+/* Estilo básico de la galería */
+.gallery {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+/* Aplica estilos de opacidad y descripción solo a las galerías específicas */
+.gallery.albumes img,
+.gallery.pelis img,
+.gallery.peliculas img {
+    width: 120px;       /* Tamaño estándar para las imágenes */
+    height: 180px;      /* Ajuste vertical para pósters */
+    object-fit: contain;
+    border-radius: 8px;
+    transition: transform 0.3s ease, filter 0.3s ease;
+    position: relative;
+}
+
+.gallery.albumes img:hover,
+.gallery.pelis img:hover,
+.gallery.peliculas img:hover {
+    filter: brightness(0.7); /* Reduce el brillo (efecto opaco) */
+    transform: scale(1.05);  /* Hace zoom ligeramente */
+}
+
+/* Contenedor de imágenes con descripción */
+.gallery.albumes .image-container,
+.gallery.pelis .image-container,
+.gallery.peliculas .image-container {
+    position: relative;
+    display: inline-block;
+    text-align: center;
+}
+
+/* Descripción oculta inicialmente */
+.gallery.albumes .description,
+.gallery.pelis .description,
+.gallery.peliculas .description {
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #39FF14;
+    font-size: 15px;
+    background-color: rgba(0, 0, 0, 0.7); /* Fondo oscuro semi-transparente */
+    padding: 5px 10px;
+    border-radius: 10px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+/* Mostrar la descripción al pasar el cursor */
+.gallery.albumes .image-container:hover .description,
+.gallery.pelis .image-container:hover .description,
+.gallery.peliculas .image-container:hover .description {
+    opacity: 1;
+}
+
+/* Galería general sin efectos */
+.gallery.generales img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    /* No se aplica opacidad ni zoom */
+}
+
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    background-color: #000; /* Fondo negro */
+    color: #ffffff;/* Verde neón */
+    margin: 0px 0;
+    padding: 10px;
+    border-radius: 5px;
+}
+/* Estilo para las imágenes generales */
+.gallery img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover; /* Esto asegura que las imágenes sean cuadradas */
+    border-radius: 8px;
+}
+
+/* Estilo específico para los pósters de películas */
+.gallery.pelis img,
+.gallery.peliculas img {
+    width: 180px;       /* Ajusta el ancho del póster */
+    height: 270px;      /* Ajusta el alto del póster para un formato vertical */
+    object-fit: contain; /* Esto muestra toda la imagen, respetando las proporciones originales */
+    border-radius: 8px; /* Opcional: esquinas redondeadas */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Opcional: un poco de sombra */
+}
+
+/* Estilo específico para los pósters de películas */
+.gallery.albumes img {
+    width: 150px;       /* Ajusta el ancho del póster */
+    height: 150px;      /* Ajusta el alto del póster para un formato vertical */
+    object-fit: contain; /* Esto muestra toda la imagen, respetando las proporciones originales */
+    border-radius: 8px; /* Opcional: esquinas redondeadas */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Opcional: un poco de sombra */
+}
+@media (max-width: 600px) {
+    .gallery.pelis img,
+    .gallery.peliculas img {
+        width: 80px;   /* Tamaño más pequeño para móviles */
+        height: 120px;
+    }
+}
+.cursor {
+    display: inline-block;
+    background-color: #39FF14;
+    width: 10px;
+    height: 20px;
+    animation: blink 1s step-start infinite;
+}
+
+@keyframes blink {
+    50% {
+        background-color: transparent;
+    }
+
+}
+.box {
+    border: 2px solid #39FF14;
+    border-radius: 5px;
+    box-shadow: 0 0 10px #39FF14, 0 0 20px #39FF14;
+    padding: 20px;
+    margin: 10px;
+}
+@keyframes scroll {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(-100%);
+    }
+}
+
+.background-code {
+    position: unfixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+    color: rgba(57, 255, 20, 0.2);
+    font-family: "Courier New", monospace;
+    white-space: pre;
+    animation: scroll 1s linear infinite;
+}
+
+.background-code p {
+    line-height: 1.5;
+}
+@media (max-width: 600px) {
+    body {
+        font-size: 0.8em;
+    }
+
+    .box {
+        padding: 10px;
+    }
+
+    img {
+        width: 80px;
+        height: auto;
+    }
+}
+.back-button {
+    display: inline-block;
+    margin: 20px 0;         /* Espaciado */
+    padding: 10px 20px;     /* Tamaño del botón */
+    color: #39FF14;         /* Verde neón */
+    background-color: #000; /* Fondo negro */
+    border: 2px solid #39FF14; /* Borde verde neón */
+    font-family: "Courier New", monospace; /* Fuente de terminal */
+    text-decoration: none;  /* Sin subrayado */
+    text-align: center;
+    border-radius: 5px;     /* Bordes redondeados */
+    transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+/* Efecto al pasar el cursor */
+.back-button:hover {
+    background-color: #39FF14; /* Cambia a fondo verde */
+    color: #000;              /* Texto negro */
+    transform: scale(1.05);   /* Aumenta ligeramente de tamaño */
+}

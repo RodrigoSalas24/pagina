@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2024</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+
+    <header>
+        <h1>2024</h1>
+    </header>
+
+    <section>
+        <div class="gallery generales">
+            {% for photo in general_photos %}
+                <img src="/static/images/{{ photo }}" alt="Foto general">
+            {% endfor %}
+        </div>
+
+    </section>
+
+    <nav>
+        <ul>
+            <li><a href="/albumes">Álbumes favoritos</a></li>
+            <li><a href="/peliculas">Películas favoritas</a></li>
+            <li><a href="/gimnasio">Gimnasio</a></li>
+        </ul>
+    </nav>
+    <p>Bienvenido a mi página...<span class="cursor"></span></p>
+</body>
+</html>

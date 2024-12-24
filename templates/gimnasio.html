@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estadísticas del Gimnasio</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <a href="/" class="back-button">Volver a la Página Principal</a>
+
+    <section>
+        <ul>
+            <h1>Gimnasio</h1>
+            <li>Entrenamientos del año: {{ stats.entrenamientos }}</li>
+            <li>Días de pierna: {{ stats.pierna }}</li>
+            <li>Días de Espalda y bíceps: {{ stats.espalda }}</li>
+            <li>Días de Pecho, Hombro y tríceps: {{ stats.pecho }}</li>
+        </ul>
+    </section>
+<div class="typing-container">
+    <p>Bienvenido a mi página...<span class="cursor"></span></p>
+
+</div>
+
+</body>
+</html>
