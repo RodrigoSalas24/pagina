@@ -35,7 +35,7 @@
         <div class="gallery pelis">
             {% for image, description in movie_posters %}
                 <div class="image-container">
-                    <img src="/static/images/{{ image }}" alt="Película Vista">
+                    <img src="{{ url_for('static', filename='images/pelis/peli1.jpg') }}" alt="Película">
                     <div class="description">{{ description }}</div>
                 </div>
             {% endfor %}

@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, url_for
 
 app = Flask(__name__)
 
@@ -55,6 +55,12 @@ def gimnasio():
         "pecho": 40,
     }
     return render_template("gimnasio.html", stats=stats)
+
+@app.route("/test")
+def test_index():
+    ruta_imagen = url_for('static', filename='images/pelis/peli1.jpg')
+    print("Ruta generada:", ruta_imagen)  # Esto debería imprimir /static/images/pelis/peli1.jpg
+    return f"Ruta generada: {ruta_imagen}"  # Mostrará la ruta en el navegador
 
 if __name__ == "__main__":
     app.run(debug=True)
