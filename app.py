@@ -25,7 +25,12 @@ def albumes():
                     ("albumes/4ever.jpeg", "9. 4ever - T&K"), ("albumes/charm.jpeg", "10. Charm - Clairo"),
                     ("albumes/alligator.jpeg", "11. Alligator bites never heal - Doechii"),
                     ("albumes/tato.jpeg", "∞. 1312 - KDK")]
-    return render_template("albumes.html", album_covers=album_covers)
+
+    stats = {
+        "minutos": 107.638,
+        "nuevos": 44,
+    }
+    return render_template("albumes.html", album_covers=album_covers, stats=stats)
 
 @app.route("/peliculas")
 def peliculas():
