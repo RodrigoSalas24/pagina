@@ -10,38 +10,50 @@
     <!-- Botón para regresar a la página principal -->
     <a href="/" class="back-button">Volver a la Página Principal</a>
 
+    <div class="box">
+        <h2>Películas Favoritas de 2024</h2>
+        <p>Mis películas favoritas del año.</p>
+    </div>
+
     <!-- Sección de Películas -->
     <section>
-        <div class="box">
-            <h2>Películas de 2024</h2>
-            <p>Mis películas favoritas del año.</p>
-        </div>
         <div class="gallery peliculas">
-            {% for image, description in movie_covers %}
-                <div class="image-container">
-                    <img src="/static/images/{{ image }}" alt="Película">
-                    <div class="description">{{ description }}</div>
-                </div>
-            {% endfor %}
+    {% for image, description in movie_covers %}
+        {% if loop.index <= 6 %}
+            <div class="image-container">
+                <img src="/static/images/{{ image }}" alt="Película">
+                <div class="description">{{ description }}</div>
+            </div>
+        {% endif %}
+    {% endfor %}
+</div>
+
+<!-- Mostrar el mensaje después de los primeros 6 ciclos -->
+{% if movie_covers|length > 6 %}
+    <div class="box">
+        <h2>Películas Vistas 2024</h2>
+        <p>Mis películas favoritas del año vistas por primera vez.</p>
+    </div>
+{% endif %}
+
+<!-- Mostrar los siguientes 6 elementos -->
+<div class="gallery peliculas">
+    {% for image, description in movie_covers[6:] %}
+        <div class="image-container">
+            <img src="/static/images/{{ image }}" alt="Película">
+            <div class="description">{{ description }}</div>
         </div>
+    {% endfor %}
+</div>
     </section>
 
-    <!-- Sección de Películas Vistas -->
-    <section>
-        <div class="box">
-            <h2>Películas Vistas 2024</h2>
-            <p>Mis películas favoritas del año vistas por primera vez.</p>
-        </div>
-        <div class="gallery pelis">
-            {% for image, description in movie_posters %}
-                <div class="image-container">
-                    <img src="{{ url_for('static', filename='images/pelis/peli1.jpg') }}" alt="Película">
-                    <div class="description">{{ description }}</div>
-                </div>
-            {% endfor %}
-        </div>
-    </section>
-
+    <ul>
+        <li>Películas vistas en el año: {{ stats.vistas }}</li>
+        <li>Películas de 2024 vistas: {{ stats.año }}</li>
+        <li>Vistas por primera vez: {{ stats.primera }}</li>
+        <li>Vistas en el cine: {{ stats.cine }}</li>
+        <a href="https://letterboxd.com/RodrigoSalas/" class="nav-link" target="_blank">Mí Letterboxd</a>
+    </ul>
     <!-- Efecto de Bienvenida -->
     <div class="typing-container">
         <p>Bienvenido a mi página...<span class="cursor"></span></p>

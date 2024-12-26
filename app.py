@@ -36,15 +36,19 @@ def albumes():
 def peliculas():
     movie_covers = [("peliculas/dune.jpg", "1. Dune: Part Two"), ("peliculas/challengers.jpg", "2. Challengers"),
                     ("peliculas/furiosa.jpg", "3. Furiosa",), ("peliculas/deadpool.jpg", "4. Deadpool y Wolverine"),
-                    ("peliculas/juror.jpg", "5. Juror #2"), ("peliculas/jockey.jpg", "6. El Jockey - Luis Ortega")]
-    return render_template("peliculas.html", movie_covers=movie_covers)
+                    ("peliculas/juror.jpg", "5. Juror #2"), ("peliculas/jockey.jpg", "6. El Jockey - Luis Ortega"),
+                    ("pelis/peli1.jpg", "1. The Father - 2020"), ("pelis/peli2.jpg", "2. Aftersun - 2022"),
+                    ("pelis/peli3.jpg", "3. The Iron Claw - 2023"), ("pelis/peli4.jpg", "4. Ciudad de Dios - 2002"),
+                    ("pelis/peli5.jpg", "5. Before Sunset - 2004"),
+                    ("pelis/peli6.jpg", "6. Everybody wants some - 2016")]
 
-@app.route("/pelis")
-def pelis():
-    movie_posters = [("pelis/peli1.jpg", "1. The Father - 2020"), ("pelis/peli2.jpg", "2. Aftersun - 2022"),
-                     ("pelis/peli3.jpg", "3. The Iron Claw - 2023"), ("pelis/peli4.jpg", "4. Ciudad de Dios - 2002"),
-                     ("pelis/peli5.jpg", "5. Before Sunset - 2004"), ("pelis/peli6.jpg", "6. Everybody wants some - 2016")]
-    return render_template("peliculas.html", movie_posters=movie_posters)
+    stats = {
+        "vistas": 133,
+        "año": 13,
+        "primera": 81,
+        "cine": 15,
+    }
+    return render_template("peliculas.html", movie_covers=movie_covers, stats=stats)
 
 @app.route("/gimnasio")
 def gimnasio():
@@ -55,12 +59,6 @@ def gimnasio():
         "pecho": 40,
     }
     return render_template("gimnasio.html", stats=stats)
-
-@app.route("/test")
-def test_index():
-    ruta_imagen = url_for('static', filename='images/pelis/peli1.jpg')
-    print("Ruta generada:", ruta_imagen)  # Esto debería imprimir /static/images/pelis/peli1.jpg
-    return f"Ruta generada: {ruta_imagen}"  # Mostrará la ruta en el navegador
 
 if __name__ == "__main__":
     app.run(debug=True)

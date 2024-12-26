@@ -13,17 +13,17 @@
     </header>
 
     <section>
-        <div class="gallery generales">
+        <div class="box">
+            <div class="gallery generales">
             {% for photo in general_photos %}
                 <img src="/static/images/{{ photo }}" alt="Foto general">
             {% endfor %}
+            </div>
         </div>
-
     </section>
 
     <nav>
         <ul>
-            <img src="{{ ruta_imagen }}" alt="Película">
             <li><a href="/albumes">Álbumes favoritos</a></li>
             <li><a href="/peliculas">Películas favoritas</a></li>
             <li><a href="/gimnasio">Gimnasio</a></li>

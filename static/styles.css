@@ -222,3 +222,10 @@ li {
     color: #000;              /* Texto negro */
     transform: scale(1.05);   /* Aumenta ligeramente de tamaño */
 }
+a {
+    color: #00FF00; /* Verde neón */
+}
+
+a:hover {
+    color: #00CC00; /* Cambiar color cuando el link sea hover (pasar el mouse sobre él) */
+}
