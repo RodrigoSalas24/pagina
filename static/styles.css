@@ -137,8 +137,8 @@ li {
 @media (max-width: 600px) {
     .gallery.pelis img,
     .gallery.peliculas img {
-        width: 80px;   /* Tamaño más pequeño para móviles */
-        height: 120px;
+        width: 60px;   /* Tamaño más pequeño para móviles */
+        height: 95px;
     }
 }
 .cursor {
