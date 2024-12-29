@@ -136,8 +136,8 @@ li {
 }
 
 .gallery.gimnasio img {
-    width: 525px;       /* Ajusta el ancho del póster */
-    height: 245px;      /* Ajusta el alto del póster para un formato vertical */
+    width: 662px;       /* Ajusta el ancho del póster */
+    height: 287px;      /* Ajusta el alto del póster para un formato vertical */
     object-fit: contain; /* Esto muestra toda la imagen, respetando las proporciones originales */
     border-radius: 0px; /* Opcional: esquinas redondeadas */
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Opcional: un poco de sombra */
@@ -148,6 +148,10 @@ li {
         width: 50px;   /* Tamaño más pequeño para móviles */
         height: 50px;
     }
+@media (max-width: 300px) {
+    .gallery.gimnasio img {
+        width: 82px;   /* Tamaño más pequeño para móviles */
+        height: 36px;
 }
 .cursor {
     display: inline-block;
