@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Estadísticas del Gimnasio</title>
+    <title>Gimnasio</title>
     <link rel="stylesheet" href="/static/styles.css">
 </head>
 <body>
@@ -16,12 +16,16 @@
             <li>Días de pierna: {{ stats.pierna }}</li>
             <li>Días de Espalda y bíceps: {{ stats.espalda }}</li>
             <li>Días de Pecho, Hombro y tríceps: {{ stats.pecho }}</li>
-        </ul>
-    </section>
-<div class="typing-container">
-    <p>Bienvenido a mi página...<span class="cursor"></span></p>
 
-</div>
+        </ul>
+        <div class="gallery gimnasio">
+            <div class="image-container">
+                <img src="/static/images/gimnasio/graf.jpg" alt="grafico">
+                <div class="description">Gráfico gimnasio 2024</div>
+            </div>
+        </div>
+        <a href="https://docs.google.com/spreadsheets/d/1TaBlnMxAQdR_aN253d_pJESxnXhNe7MRmkJjhRmouIE/edit?gid=0#gid=0" class="nav-link" target="_blank">Más</a>
+    </section>
 
 </body>
 </html>

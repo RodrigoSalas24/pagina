@@ -134,6 +134,14 @@ li {
     border-radius: 8px; /* Opcional: esquinas redondeadas */
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Opcional: un poco de sombra */
 }
+
+.gallery.gimnasio img {
+    width: 525px;       /* Ajusta el ancho del póster */
+    height: 245px;      /* Ajusta el alto del póster para un formato vertical */
+    object-fit: contain; /* Esto muestra toda la imagen, respetando las proporciones originales */
+    border-radius: 0px; /* Opcional: esquinas redondeadas */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Opcional: un poco de sombra */
+}
 @media (max-width: 300px) {
     .gallery.pelis img,
     .gallery.peliculas img {

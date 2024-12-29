@@ -19,7 +19,7 @@
     <section>
         <div class="gallery peliculas">
     {% for image, description in movie_covers %}
-        {% if loop.index <= 6 %}
+        {% if loop.index <= 8 %}
             <div class="image-container">
                 <img src="/static/images/{{ image }}" alt="Película">
                 <div class="description">{{ description }}</div>
@@ -29,16 +29,16 @@
 </div>
 
 <!-- Mostrar el mensaje después de los primeros 6 ciclos -->
-{% if movie_covers|length > 6 %}
+{% if movie_covers|length > 8 %}
     <div class="box">
         <h2>Películas Vistas 2024</h2>
         <p>Mis películas favoritas del año vistas por primera vez.</p>
     </div>
 {% endif %}
 
-<!-- Mostrar los siguientes 6 elementos -->
+<!-- Mostrar los siguientes 8 elementos -->
 <div class="gallery peliculas">
-    {% for image, description in movie_covers[6:] %}
+    {% for image, description in movie_covers[8:] %}
         <div class="image-container">
             <img src="/static/images/{{ image }}" alt="Película">
             <div class="description">{{ description }}</div>
@@ -54,9 +54,5 @@
         <li>Vistas en el cine: {{ stats.cine }}</li>
         <a href="https://letterboxd.com/RodrigoSalas/" class="nav-link" target="_blank">Mí Letterboxd</a>
     </ul>
-    <!-- Efecto de Bienvenida -->
-    <div class="typing-container">
-        <p>Bienvenido a mi página...<span class="cursor"></span></p>
-    </div>
 </body>
 </html>
